@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banking Mains</title>
+<style>
+    /* UI Styles */
+    *{ margin:0; padding:0; box-sizing:border-box; font-family:Arial,sans-serif; -webkit-tap-highlight-color: transparent; }
+    body{ background:#0f172a; color:white; padding:15px; min-height:100vh; }
+    .header{ text-align:center; margin-bottom:25px; }
+    .header h1{ font-size:30px; background:linear-gradient(90deg,#60a5fa,#8b5cf6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+    .folder-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+    .folder-card{ background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:20px; text-align:center; cursor:pointer; transition: 0.2s; }
+    .folder-card:active { transform: scale(0.97); background:rgba(255,255,255,0.1); }
+    .folder-overlay { position: fixed; inset: 0; background: #0f172a; z-index: 1000; display: flex; flex-direction: column; transform: translateY(100%); transition: transform 0.3s; }
+    .folder-overlay.open { transform: translateY(0); }
+    .file-item{ padding: 16px 20px; border-bottom:1px solid rgba(255,255,255,0.05); cursor:pointer; }
+    .loader-overlay{ position:fixed; inset:0; background:#0f172a; display:flex; align-items:center; justify-content:center; z-index:99999; }
+    .loader-overlay.hide{ opacity:0; pointer-events:none; }
+</style>
+</head>
+<body>
+<div class="loader-overlay" id="loader"><div class="loader">Loading...</div></div>
+<div class="header"><h1>Last Attempt - SSC CGL</h1></div>
+<div class="folder-grid" id="folderGrid"></div>
+
+<div class="folder-overlay" id="folderOverlay">
+    <div style="padding:18px; border-bottom:1px solid #334155;"><button onclick="closeFolder()">← Back</button></div>
+    <div id="overlayContent"></div>
+</div>
+
+<script>
+    const username = "Lokanathsahu13";
+    const repo = "lastttttt";
+    let globalFolders = {};
+
+    function getCategory(fn) { return fn.replace(/\s*\d+\.json$/i, "").trim(); }
+    function getNumber(fn) { const m = fn.match(/(\d+)(?=\.json)/i); return m ? parseInt(m[1]) : 0; }
+
+    async function loadFiles(){
+        const res = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/`);
+        const data = await res.json();
+        const files = data.filter(f => f.name.endsWith(".json")).map(f => f.name);
+        
+        files.forEach(f => {
+            const cat = getCategory(f);
+            if(!globalFolders[cat]) globalFolders[cat] = [];
+            globalFolders[cat].push(f);
+        });
+        Object.keys(globalFolders).forEach(k => globalFolders[k].sort((a,b) => getNumber(b) - getNumber(a)));
+        
+        const grid = document.getElementById("folderGrid");
+        Object.keys(globalFolders).forEach(cat => {
+            grid.innerHTML += `<div class="folder-card" onclick="openFolder('${cat}')">📁<br>${cat}</div>`;
+        });
+        document.getElementById("loader").classList.add("hide");
+    }
+
+    function openFolder(cat) {
+        document.getElementById("overlayContent").innerHTML = globalFolders[cat].map(f => 
+            `<div class="file-item" onclick="location.href='instruction.html?file=${encodeURIComponent(f)}'">📄 ${f.replace('.json','')}</div>`
+        ).join("");
+        document.getElementById("folderOverlay").classList.add("open");
+    }
+    function closeFolder() { document.getElementById("folderOverlay").classList.remove("open"); }
+    loadFiles();
+</script>
+</body>
+</html>

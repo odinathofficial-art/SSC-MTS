@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Last Attempt - Quiz Engine</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#312e81);
+    color:white;
+    padding:20px;
+    overflow:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at top left,#60a5fa33,transparent 40%),
+        radial-gradient(circle at bottom right,#8b5cf633,transparent 40%);
+    pointer-events:none;
+}
+
+.main-card{
+    width:100%;
+    max-width:500px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:24px;
+    padding:35px 25px;
+    text-align:center;
+    box-shadow:0 15px 50px rgba(0,0,0,0.3);
+    position:relative;
+    z-index:1;
+}
+
+.logo{
+    font-size:42px;
+    font-weight:800;
+    margin-bottom:10px;
+    background:linear-gradient(90deg,#60a5fa,#8b5cf6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    opacity:0.85;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+#statusText{
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:25px;
+}
+
+button{
+    width:100%;
+    border:none;
+    border-radius:14px;
+    padding:16px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+button:active{
+    transform:scale(0.98);
+}
+
+#btnDownload{
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    color:white;
+    box-shadow:0 10px 30px rgba(37,99,235,.35);
+}
+
+#btnProceed{
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+    color:white;
+    box-shadow:0 10px 30px rgba(34,197,94,.35);
+}
+
+.hidden{
+    display:none;
+}
+
+#progressContainer{
+    margin-top:10px;
+}
+
+.progress-track{
+    width:100%;
+    height:16px;
+    background:rgba(255,255,255,0.12);
+    border-radius:50px;
+    overflow:hidden;
+}
+
+#progressBar{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#60a5fa,#8b5cf6);
+    border-radius:50px;
+    transition:width 0.2s;
+}
+
+#progressText{
+    display:block;
+    margin-top:12px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.info-box{
+    margin-top:25px;
+    padding:15px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.06);
+    font-size:14px;
+    opacity:0.9;
+    line-height:1.5;
+}
+
+@media(max-width:600px){
+
+    .main-card{
+        padding:30px 20px;
+    }
+
+    .logo{
+        font-size:34px;
+    }
+
+    #statusText{
+        font-size:16px;
+    }
+
+    button{
+        font-size:15px;
+        padding:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="main-card">
+
+    <div class="logo">Last Attempt</div>
+
+    <div class="subtitle">
+        SSC CGL - Practice for Mock Tests, Sectional Tests,
+        and PYQ Tests
+    </div>
+
+    <div id="statusText">Checking...</div>
+
+    <div id="downloadArea" class="hidden">
+        <button id="btnDownload">
+            Connect
+        </button>
+    </div>
+
+    <div id="proceedArea" class="hidden">
+        <button id="btnProceed">
+            Start Practice Now
+        </button>
+    </div>
+
+    <div id="progressContainer" class="hidden">
+        <div class="progress-track">
+            <div id="progressBar"></div>
+        </div>
+        <span id="progressText">0%</span>
+    </div>
+
+    <div class="info-box">
+        More Then 500+ Tests Are Ready to Practice.
+    </div>
+
+</div>
+
+<script>
+const statusText = document.getElementById('statusText');
+const downloadArea = document.getElementById('downloadArea');
+const proceedArea = document.getElementById('proceedArea');
+const progressContainer = document.getElementById('progressContainer');
+const progressBar = document.getElementById('progressBar');
+const progressText = document.getElementById('progressText');
+
+// Check if data is already in LocalStorage/Cache
+const isReady = localStorage.getItem('quizDataReady');
+
+if (isReady === 'true') {
+    statusText.innerText = "Connected Successfully !!";
+    proceedArea.classList.remove('hidden');
+} else {
+    statusText.innerText = "Connect To SSC CGL Practice Zone";
+    downloadArea.classList.remove('hidden');
+}
+
+// Handle Download
+document.getElementById('btnDownload').onclick = async () => {
+    downloadArea.classList.add('hidden');
+    progressContainer.classList.remove('hidden');
+    statusText.innerText = "Downloading...";
+
+    const response = await fetch('quiz.html');
+    const reader = response.body.getReader();
+  const contentLength = parseInt(response.headers.get('Content-Length')) || 0;
+
+    let receivedLength = 0;
+    let chunks = [];
+
+    while(true) {
+        const {done, value} = await reader.read();
+
+        if (done) break;
+
+        chunks.push(value);
+        receivedLength += value.length;
+
+       if (contentLength > 0) {
+    let percent = Math.min(
+        Math.round((receivedLength / contentLength) * 100),
+        100
+    );
+
+    progressBar.style.width = percent + "%";
+    progressText.innerText = percent + "%";
+}
+    }
+progressBar.style.width = "100%";
+progressText.innerText = "100%";
+    localStorage.setItem('quizDataReady', 'true');
+
+    statusText.innerText = "Connected Successfully !!!";
+    proceedArea.classList.remove('hidden');
+};
+
+// Handle Proceed
+document.getElementById('btnProceed').onclick = () => {
+    window.location.href = "home.html";
+};
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+        .then(() => console.log("Service Worker Registered"))
+        .catch(err => console.error(err));
+}
+
+
+
+
+
+
+
+
+
+
+
+    
+</script>
+
+</body>
+</html>

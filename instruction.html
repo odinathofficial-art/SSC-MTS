@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instructions</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+    padding:20px;
+    line-height:1.6;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+    background:#1e293b;
+    padding:20px;
+    border-radius:12px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+ul{
+    padding-left:20px;
+}
+
+.start-btn{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    background:#22c55e;
+    color:white;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>Test Instructions</h1>
+
+<ul>
+<li>Total marks will be calculated automatically.</li>
+<li>Each question carries equal marks.</li>
+<li>No negative marking unless mentioned.</li>
+<li>Do not refresh the page during the test.</li>
+<li>Use fullscreen mode for better experience.</li>
+<li>Click Submit after completing the test.</li>
+</ul>
+
+<button class="start-btn" onclick="startTest()">
+Start Test
+</button>
+
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const file = params.get("file");
+
+function startTest(){
+    location.href = "quiz.html?file=" + encodeURIComponent(file);
+}
+</script>
+
+</body>
+</html>

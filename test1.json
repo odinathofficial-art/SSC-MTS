@@ -1,0 +1,200 @@
+{
+  "A": [
+    {
+      "id": 1,
+      "textEN": "It is 1. question 1/8 + 1/16 and express the result as a decimal.",
+      "textHI": "1/8 + 1/16 जोड़ें और परिणाम को दशमलव के रूप में व्यक्त करें।",
+      "image": "Screenshot 2026-06-13 8.40.46 AM.png",
+      "options": ["0.1875", "0.2345", "0.5678", "0.3125"],
+      "correct": "0",
+      "explanation": "1/8 = 2/16. So, 2/16 + 1/16 = 3/16. 3 divided by 16 equals 0.1875.",
+      "explanationHI": "1/8 = 2/16. इसलिए, 2/16 + 1/16 = 3/16। 3 को 16 से भाग देने पर 0.1875 प्राप्त होता है।"
+    },
+    {
+      "id": 2,
+      "textEN": "Solve for x: 2x + 5 = 15.",
+      "textHI": "x के लिए हल करें: 2x + 5 = 15.",
+      "options": ["5", "10", "15", "20"],
+      "correct": "0",
+      "explanation": "Subtract 5 from both sides to get 2x = 10. Divide by 2 to get x = 5.",
+      "explanationHI": "दोनों तरफ से 5 घटाने पर 2x = 10 मिलता है। 2 से भाग देने पर x = 5 प्राप्त होता है।"
+    },
+    {
+      "id": 3,
+      "textEN": "What is the square root of 625?",
+      "textHI": "625 का वर्गमूल क्या है?",
+      "options": ["15", "25", "35", "45"],
+      "correct": "1",
+      "explanation": "25 multiplied by 25 equals 625. Therefore, the square root of 625 is 25.",
+      "explanationHI": "25 को 25 से गुणा करने पर 625 मिलता है। इसलिए, 625 का वर्गमूल 25 है।"
+    },
+    {
+      "id": 4,
+      "textEN": "Compute the average of 10, 20, and 30.",
+      "textHI": "10, 20, और 30 का औसत ज्ञात कीजिए।",
+      "options": ["15", "20", "25", "30"],
+      "correct": "1",
+      "explanation": "The sum of 10, 20, and 30 is 60. Divide by the total number of items (3) to get an average of 20.",
+      "explanationHI": "10, 20, और 30 का योग 60 है। कुल संख्या (3) से भाग देने पर औसत 20 प्राप्त होता है।"
+    },
+    {
+      "id": 5,
+      "textEN": "Compute the average of 10, 20, and 30.",
+      "textHI": "10, 20, और 30 का औसत ज्ञात कीजिए।",
+      "options": ["15", "20", "25", "30"],
+      "correct": "1",
+      "explanation": "The sum of 10, 20, and 30 is 60. Divide by the total number of items (3) to get an average of 20.",
+      "explanationHI": "10, 20, और 30 का योग 60 है। कुल संख्या (3) से भाग देने पर औसत 20 प्राप्त होता है।"
+    },
+    {
+      "id": 61,
+      "textEN": "Evaluate 12% of 500.",
+      "textHI": "500 का 12% का मान ज्ञात करें।",
+      "options": ["50", "60", "70", "80"],
+      "correct": "1",
+      "explanation": "12% can be written as 12/100. Multiplying (12/100) * 500 yields 60.",
+      "explanationHI": "12% को 12/100 के रूप में लिखा जा सकता है। (12/100) * 500 का गुणा करने पर 60 प्राप्त होता है।"
+    }
+  ],
+  "B": [
+    {
+      "id": 6,
+      "textEN": "Select the option that is closest in meaning to 'ABANDON'.",
+      "textHI": "वह विकल्प चुनें जो 'ABANDON' शब्द के अर्थ के सबसे करीब है।",
+      "options": ["Keep", "Forsake", "Claim", "Pursue"],
+      "correct": "1",
+      "explanation": "To abandon means to completely give up or leave behind. 'Forsake' shares this exact meaning.",
+      "explanationHI": "Abandon का अर्थ है पूरी तरह से छोड़ देना। 'Forsake' का भी यही अर्थ होता है।"
+    },
+    {
+      "id": 7,
+      "textEN": "Find the correctly spelled word.",
+      "textHI": "सही वर्तनी वाले शब्द का चयन करें।",
+      "options": ["Receive", "Recieve", "Receve", "Ricieve"],
+      "correct": "0",
+      "explanation": "The correct spelling follows the rule 'i before e, except after c', making it 'Receive'.",
+      "explanationHI": "सही वर्तनी 'Receive' है, जो 'i before e, except after c' के नियम का पालन करती है।"
+    },
+    {
+      "id": 8,
+      "textEN": "Fill in the blank: She ___ to school every day.",
+      "textHI": "रिक्त स्थान भरें: She ___ to school every day.",
+      "options": ["go", "goes", "going", "gone"],
+      "correct": "1",
+      "explanation": "The subject 'She' is third-person singular, so the verb must take the '-es' form ('goes') for present tense.",
+      "explanationHI": "कर्ता 'She' तृतीय-पुरुष एकवचन है, इसलिए वर्तमान काल में क्रिया का '-es' रूप ('goes') होगा।"
+    },
+    {
+      "id": 9,
+      "textEN": "Identify the antonym of 'GIANT'.",
+      "textHI": "'GIANT' शब्द का विलोम शब्द पहचानें।",
+      "options": ["Huge", "Dwarf", "Large", "Tall"],
+      "correct": "1",
+      "explanation": "'Giant' refers to something extremely large. The opposite (antonym) is 'Dwarf', meaning unusually small.",
+      "explanationHI": "'Giant' का अर्थ है बहुत बड़ा। इसका विलोम 'Dwarf' (बौना) है, जिसका अर्थ असामान्य रूप से छोटा होता है।"
+    },
+    {
+      "id": 10,
+      "textEN": "Choose the alternative which best expresses the idiom 'Cold shoulder'.",
+      "textHI": "उस विकल्प का चयन करें जो मुहावरे 'Cold shoulder' का सबसे अच्छा अर्थ व्यक्त करता है।",
+      "options": ["To love", "To ignore", "To help", "To support"],
+      "correct": "1",
+      "explanation": "To give someone the 'cold shoulder' means to intentionally ignore them or show unfriendliness.",
+      "explanationHI": "'Cold shoulder' देने का अर्थ है जानबूझकर किसी को अनदेखा करना या अमित्र व्यवहार दिखाना।"
+    }
+  ],
+  "C": [
+    {
+      "id": 11,
+      "textEN": "Identify the error in the sentence: 'She do not clear the screening examination test cycle.'",
+      "textHI": "वाक्य में त्रुटि की पहचान करें: 'She do not clear the screening examination test cycle.'",
+      "options": ["She do", "not clear", "the screening", "no error"],
+      "correct": "0",
+      "explanation": "The subject 'She' is singular, so the auxiliary verb should be 'does', making the correct phrase 'She does not clear'.",
+      "explanationHI": "कर्ता 'She' एकवचन है, इसलिए सहायक क्रिया 'does' होनी चाहिए, जिससे सही वाक्यांश 'She does not clear' बनता है।"
+    },
+    {
+      "id": 12,
+      "textEN": "Fill in the blank with appropriate preposition: 'The classes will resume ___ Monday morning.'",
+      "textHI": "उपयुक्त प्रीपोज़िशन के साथ रिक्त स्थान भरें: 'The classes will resume ___ Monday morning.'",
+      "options": ["on", "at", "in", "for"],
+      "correct": "0",
+      "explanation": "We use the preposition 'on' before days of the week (e.g., on Monday).",
+      "explanationHI": "हम सप्ताह के दिनों के नाम से पहले 'on' का उपयोग करते हैं (जैसे: on Monday)।"
+    },
+    {
+      "id": 13,
+      "textEN": "Choose the word which is synonymous to 'METICULOUS'.",
+      "textHI": "उस शब्द का चयन करें जो 'METICULOUS' का पर्यायवाची है।",
+      "options": ["Careless", "Careful", "Hasty", "Flawed"],
+      "correct": "1",
+      "explanation": "Meticulous means showing great attention to detail. 'Careful' is the closest synonym.",
+      "explanationHI": "Meticulous का अर्थ है विवरणों पर बहुत ध्यान देना। 'Careful' इसका सबसे निकटतम पर्यायवाची है।"
+    },
+    {
+      "id": 14,
+      "textEN": "Convert into Passive Voice: 'Omm plays football.'",
+      "textHI": "पैसिव वॉइस में बदलें: 'Omm plays football.'",
+      "options": ["Football was played by Omm.", "Football is played by Omm.", "Football is being played by Omm.", "Football plays Omm."],
+      "correct": "1",
+      "explanation": "The active sentence is in simple present tense. The passive structure is 'Object + is/am/are + V3 + by + Subject'. Thus: 'Football is played by Omm.'",
+      "explanationHI": "यह वाक्य साधारण वर्तमान काल में है। पैसिव संरचना 'Object + is/am/are + V3 + by + Subject' है। अतः: 'Football is played by Omm.'"
+    },
+    {
+      "id": 15,
+      "textEN": "Select the correctly punctuated sentence alternative sequence.",
+      "textHI": "सही विराम चिह्न वाले वाक्य का चयन करें।",
+      "options": ["Alas! We lost the game.", "Alas, we lost the game?", "Alas we lost the game.", "Alas! we lost the game?"],
+      "correct": "0",
+      "explanation": "'Alas' is an interjection expressing sorrow and should be followed by an exclamation mark. The next word starts with a capital letter.",
+      "explanationHI": "'Alas' एक विस्मयादिबोधक शब्द है जो दुःख व्यक्त करता है, इसके बाद विस्मयादिबोधक चिह्न होना चाहिए। अगला शब्द बड़े अक्षर से शुरू होता है।"
+    }
+  ],
+  "D": [
+    {
+      "id": 16,
+      "textEN": "Complete the series: 2, 4, 8, 16, ___",
+      "textHI": "श्रृंखला को पूरा करें: 2, 4, 8, 16, ___",
+      "options": ["24", "28", "32", "36"],
+      "correct": "2",
+      "explanation": "Each number in the series is multiplied by 2 to get the next number. 16 * 2 = 32.",
+      "explanationHI": "अगली संख्या प्राप्त करने के लिए श्रृंखला की प्रत्येक संख्या को 2 से गुणा किया जाता है। 16 * 2 = 32।"
+    },
+    {
+      "id": 17,
+      "textEN": "If CAT is coded as 24, how is DOG coded?",
+      "textHI": "यदि CAT का कोड 24 है, तो DOG का कोड क्या होगा?",
+      "options": ["22", "26", "28", "30"],
+      "correct": "1",
+      "explanation": "The code is the sum of alphabetical positions: C(3) + A(1) + T(20) = 24. For DOG: D(4) + O(15) + G(7) = 26.",
+      "explanationHI": "कोड वर्णमाला के स्थानों का योग है: C(3) + A(1) + T(20) = 24। DOG के लिए: D(4) + O(15) + G(7) = 26।"
+    },
+    {
+      "id": 18,
+      "textEN": "Find the odd one out from the options.",
+      "textHI": "दिए गए विकल्पों में से विषम का चयन करें।",
+      "options": ["Car", "Bicycle", "Truck", "Train"],
+      "correct": "1",
+      "explanation": "A bicycle is the only vehicle listed that does not run on fuel or a motorized engine.",
+      "explanationHI": "साइकिल ही एकमात्र ऐसा वाहन है जो ईंधन या मोटर चालित इंजन पर नहीं चलता है।"
+    },
+    {
+      "id": 19,
+      "textEN": "Pointing to a man, a woman said, 'His mother is the only daughter of my father'. How is the woman related to the man?",
+      "textHI": "एक पुरुष की ओर इशारा करते हुए एक महिला ने कहा, 'उसकी माँ मेरे पिता की इकलौती बेटी है'। महिला का उस पुरुष से क्या संबंध है?",
+      "options": ["Sister", "Mother", "Aunt", "Grandmother"],
+      "correct": "1",
+      "explanation": "The 'only daughter of my father' is the woman speaking. Since this woman is the man's mother, the relationship is Mother.",
+      "explanationHI": "'मेरे पिता की इकलौती बेटी' बोलने वाली महिला स्वयं है। चूंकि यह महिला पुरुष की माँ है, इसलिए संबंध माँ का है।"
+    },
+    {
+      "id": 20,
+      "textEN": "If '+' means '×' and '–' means '÷', find the value of 6 + 4 – 2.",
+      "textHI": "यदि '+' का अर्थ '×' और '–' का अर्थ '÷' है, तो 6 + 4 – 2 का मान ज्ञात कीजिए।",
+      "options": ["8", "10", "12", "14"],
+      "correct": "2",
+      "explanation": "Substitute the signs: 6 × 4 ÷ 2. Following BODMAS, first divide (4 ÷ 2 = 2), then multiply (6 × 2 = 12).",
+      "explanationHI": "चिह्नों को बदलें: 6 × 4 ÷ 2। BODMAS का पालन करते हुए, पहले भाग दें (4 ÷ 2 = 2), फिर गुणा करें (6 × 2 = 12)।"
+    }
+  ]
+}
