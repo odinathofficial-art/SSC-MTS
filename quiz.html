@@ -2221,7 +2221,24 @@ const sectionNames = {
                 document.exitFullscreen();
             }
         });
+// Add this to your Parent Page
+window.addEventListener("message", (event) => {
+    // SECURITY: Ensure the message comes from your specific website
+    if (event.origin !== "https://lokanathsahu13.github.io") return;
 
+    const iframe = document.getElementById('appFrame');
+
+    if (event.data === "toggleFullscreen") {
+        if (!document.fullscreenElement) {
+            // This targets the actual iframe element on the parent
+            iframe.requestFullscreen().catch(err => {
+                console.error(`Error attempting to enable full-screen: ${err.message}`);
+            });
+        } else {
+            document.exitFullscreen();
+        }
+    }
+});
         document.addEventListener('fullscreenchange', () => {
             if (document.fullscreenElement) {
                 fullscreenBtn.innerText = "Exit Fullscreen";
