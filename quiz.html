@@ -2213,14 +2213,26 @@ const sectionNames = {
         });
 
         const fullscreenBtn = document.getElementById('btnFullscreen');
-        fullscreenBtn.addEventListener('click', () => {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen()
-                    .catch(err => console.log(`Error moving into fullscreen mode: ${err.message}`));
-            } else {
-                document.exitFullscreen();
-            }
-        });
+    fullscreenBtn.addEventListener('click', () => {
+
+    // Running inside iframe
+    if (window.self !== window.top) {
+
+        window.parent.postMessage(
+            "toggleFullscreen",
+            "*"
+        );
+
+        return;
+    }
+
+    // Running normally
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+});
 // Add this to your Parent Page
 window.addEventListener("message", (event) => {
     // SECURITY: Ensure the message comes from your specific website
